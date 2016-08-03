@@ -6,17 +6,25 @@
     <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
+    <script type="text/javascript" src="js/heatmap.js"></script>
 
   </head>
   <body>
-    <h1>Where does bike theft occur?</h1>
-    <form>
-      <label for="city">Enter a city:</label>
-      <input type="text" id="city">
-      <button type="button" id="city-search">Search</button>
-    </form>
-    <ul id="result"></ul>
-    <p id="error"></p>
-    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Portland&key=AIzaSyB6UloCk2kKcdRsbfggLRUdT3gYo3_Ab2k"></iframe>
+    <div class="container">
+      <h1>Where does bike theft occur?</h1>
+      <form>
+        <label for="city">Enter a city:</label>
+        <input type="text" id="city">
+        <button type="button" id="city-search">Search</button>
+      </form>
+      <ul id="result"></ul>
+      <p id="error"></p>
+      <div id="map">
+
+      </div>    
+    </div>
+    <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UloCk2kKcdRsbfggLRUdT3gYo3_Ab2k&libraries=visualization&callback=initMap">
+   </script>
   </body>
 </html>
