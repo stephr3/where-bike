@@ -80,7 +80,6 @@ gulp.task('serve', function() {
       index: "index.html"
     }
   })
-
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
   gulp.watch(['*.html'], ['htmlBuild']);
@@ -105,7 +104,7 @@ gulp.task('jshint', function(){
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('cssBuild', function(){
+gulp.task('cssBuild', function() {
   return gulp.src(['scss/*.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass())

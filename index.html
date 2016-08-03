@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YogaDex</title>
+    <title>Where in the world is my bike?</title>
     <link rel="stylesheet" href="build/css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="build/css/styles.css">
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
 
   </head>
   <body>
-
+    <h1>Where in the world is my bike?</h1>
+    <form>
+      <label for="name">Search for bike by color:</label>
+      <input type="text" id="color">
+      <button type="button" id="color-search">Search</button>
+    </form>
+    <ul id="result"></ul>
+    <p id="error"></p>
   </body>
 </html>
