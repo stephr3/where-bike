@@ -1,13 +1,21 @@
 var mapsKey = require('./../.env').mapsKey;
 var Bike = require('./../js/bike.js').bikeModule;
+var City = require('./../js/city.js').cityModule;
 
 $(document).ready(function(){
   $("#city-search").click(function(event){
     event.preventDefault();
     var city = $("#city").val();
     $("#city").val("");
-    $("iframe").attr("src", "https://www.google.com/maps/embed/v1/place?q=" + city + "&key=" + mapsKey)
-    var newBikeSearch = new Bike();
-    newBikeSearch.getBikeList(city);
+    var newBikeSearch = new Bike(city);
+    newBikeSearch.getBikeList();
+    $("#city-name").text(city);
+    $("#show-map").click(function(event){
+      event.preventDefault;
+      var searchCity = new City(city);
+      console.log(searchCity)
+      searchCity.getLattLon();
+      $("#map").show();
+    });
   });
 });
