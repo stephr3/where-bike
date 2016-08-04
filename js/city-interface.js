@@ -7,11 +7,15 @@ $(document).ready(function(){
     event.preventDefault();
     var city = $("#city").val();
     $("#city").val("");
-    var newBikeSearch = new Bike();
-    newBikeSearch.getBikeList(city);
-    var searchCity = new City(city);
-    searchCity.getLattLon();
-    $("#map").show();
+    var newBikeSearch = new Bike(city);
+    newBikeSearch.getBikeList();
     $("#city-name").text(city);
+    $("#show-map").click(function(event){
+      event.preventDefault;
+      var searchCity = new City(city);
+      console.log(searchCity)
+      searchCity.getLattLon();
+      $("#map").show();
+    });
   });
 });

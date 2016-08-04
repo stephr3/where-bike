@@ -1,4 +1,10 @@
 var map, heatmap;
+var heatmapData = [];
+// Heatmap data
+
+function getPoints(latt, lon) {
+  heatmapData.push(new google.maps.LatLng(latt, lon));
+}
 
 function initMap(latt, lon) {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -7,15 +13,12 @@ function initMap(latt, lon) {
     mapTypeId: 'satellite'
   });
 
-  heatmap = new google.maps.visualization.HeatmapLayer({
-    data: getPoints(),
-    map: map
+  var heatmap = new google.maps.visualization.HeatmapLayer({
+    data: heatmapData
   });
+  heatmap.setMap(map);
 }
 
-function toggleHeatmap() {
-  heatmap.setMap(heatmap.getMap() ? null : map);
-}
 
 function changeGradient() {
   var gradient = [
@@ -43,11 +46,4 @@ function changeRadius() {
 
 function changeOpacity() {
   heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-}
-
-// Heatmap data: 500 Points
-function getPoints() {
-  return [
-    new google.maps.LatLng(37.782551, -122.445368),
-  ];
 }
