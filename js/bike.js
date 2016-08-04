@@ -1,7 +1,7 @@
 var bikeKey = require('./../.env').bikeKey;
 
 function Bike() {
-  this.lattLong = [];
+
 }
 var locations = [];
 var lattLong = [];
@@ -20,13 +20,12 @@ Bike.prototype.getBikeList = function(city){
         var location = val.results[0].geometry.location;
         var lat = location.lat;
         var lon = location.lng;
-        // $("#lat-long-array").append("[" + lat + ", " + lon + "], ");
-        lattLong.push([lat, lon]);
+        $("#lat-long-array").append("[" + lat + ", " + lon + "], ");
       }
       });
-    }
+    });
     // console.log(lattLong);
-  }).fail(function(error){
+}).fail(function(error){
     $("#error").text(error.responseJSON.message);
   });
 };
