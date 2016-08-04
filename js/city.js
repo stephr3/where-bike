@@ -15,7 +15,6 @@ City.prototype.getLattLon = function() {
       initMap(that.latt, that.lon);
     }
   });
-
 };
 
 exports.cityModule = City;

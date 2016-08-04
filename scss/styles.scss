@@ -1,12 +1,26 @@
+$light-blue: #4bd2e7;
+$off-white: #EFE7CE;
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
+#city-result {
+  display: none;
+}
 #map {
   display: none;
   height: 600px;
   width: 600px;
+}
+#show-map {
+  display: none;
+  background-color: $light-blue;
+  color: $off-white;
+}
+#loading-img {
+  display: none;
 }
 #floating-panel {
   position: absolute;

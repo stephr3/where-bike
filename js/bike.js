@@ -13,6 +13,9 @@ Bike.prototype.getBikeList = function(){
     response.bikes.forEach(function(bike){
       that.getLattLons(bike.stolen_location);
     });
+  }).then(function(){
+    $("#loading-img").hide();
+    $("#show-map").show();
   }).fail(function(error){
     $("#error").text(error.responseJSON.message);
   });

@@ -9,6 +9,10 @@ $(document).ready(function(){
     $("#city").val("");
     var newBikeSearch = new Bike(city);
     newBikeSearch.getBikeList();
+    $("#show-map").hide();
+    $("#map").hide();
+    $("#loading-img").show();
+    $("#city-result").show();
     $("#city-name").text(city);
     $("#show-map").click(function(event){
       event.preventDefault;
