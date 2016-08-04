@@ -9,15 +9,22 @@ html, body {
 #city-result {
   display: none;
 }
+#city-result p {
+  font-weight: bold;
+}
 #map {
+  border: solid 3px black;
   display: none;
   height: 600px;
   width: 600px;
 }
-#show-map {
-  display: none;
+button {
   background-color: $light-blue;
   color: $off-white;
+  margin-bottom: 10px;
+}
+#show-map {
+  display: none;
 }
 #loading-img {
   display: none;
@@ -43,4 +50,10 @@ html, body {
   position: absolute;
   top: 10px;
   z-index: 5;
+}
+.bike-pictures {
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 90.55px;
+  border: solid 1px black;
 }

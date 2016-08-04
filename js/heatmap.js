@@ -17,5 +17,5 @@ function initMap(latt, lon) {
     data: heatmapData
   });
   heatmap.setMap(map);
-  heatmap.set('radius', heatmap.get('radius') ? null : 30);
+  heatmap.set('radius', heatmap.get('radius') ? null : 40);
 }

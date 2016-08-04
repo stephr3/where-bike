@@ -19,16 +19,67 @@
       </form>
       <ul id="result"></ul>
       <p id="error"></p>
-      <h3 id="city-result">City Name: <span id="city-name"></span></h3>
-      <img id="loading-img" src="img/loading.gif" alt="woman biking">
+      <div id="city-result">
+        <h3 ><span id="city-name"></span>'s Last 10 Bikes Reported Stolen:</h3>
+        <div class="row" id="gallery-row-1">
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="0">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="1">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="2">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="3">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="4">
+            <p></p>
+          </div>
+        </div>
+        <div class="row" id="gallery-row-2">
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="5">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="6">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="7">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="8">
+            <p></p>
+          </div>
+          <div class="col-md-2">
+            <img alt="bike image" class="bike-pictures" id="9">
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div id="loading-img">
+        <h3>Loading...</h3>
+        <img src="img/loading.gif" alt="woman biking">
+      </div>
       <button type="button" id="show-map">Show Map</button>
+      <br>
       <div id="map">
 
       </div>
       <p id="lat-long-array"></p>
     </div>
     <script async defer
-     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UloCk2kKcdRsbfggLRUdT3gYo3_Ab2k&libraries=visualization&callback=initMap">
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UloCk2kKcdRsbfggLRUdT3gYo3_Ab2k&libraries=visualization&callback=initMap" id="google-api-script">
    </script>
   </body>
 </html>

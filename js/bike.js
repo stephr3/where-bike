@@ -1,9 +1,5 @@
-var bikeKey = require('./../.env').bikeKey;
-
 function Bike(city) {
   this.city = city;
-  this.lattLongs = [];
-  this.locations = [];
 }
 
 Bike.prototype.getBikeList = function(){
@@ -12,10 +8,36 @@ Bike.prototype.getBikeList = function(){
     console.log(response);
     response.bikes.forEach(function(bike){
       that.getLattLons(bike.stolen_location);
+      if (response.bikes.length > 10){
+        for(var i=0; i<10; i++) {
+          $('#' + i).next().text(response.bikes[i].title)
+          if(response.bikes[i].large_img){
+            $('#' + i).attr("src", response.bikes[i].large_img);
+          }else{
+            $('#' + i).attr("src", "img/stock.jpg");
+          }
+        }
+      } else {
+        for(var i=0; i<response.bikes.length; i++) {
+          $('#' + i).next().text(response.bikes[i].title)
+          if(response.bikes[i].large_img){
+            $('#' + i).attr("src", response.bikes[i].large_img);
+          }else{
+            $('#' + i).attr("src", "img/stock.jpg");
+          }
+        }
+        for(var i=response.bikes.length; i < 10; i++) {
+          $('#' + i).attr("src", "img/nobike.png");
+          $('#' + i).next().text("No more bikes found")
+        }
+      }
+
     });
   }).then(function(){
     $("#loading-img").hide();
+    $("#city-result").show();
     $("#show-map").show();
+
   }).fail(function(error){
     $("#error").text(error.responseJSON.message);
   });
@@ -28,7 +50,6 @@ Bike.prototype.getLattLons = function(bikeLocation) {
       var locale = val.results[0].geometry.location;
       var latt = locale.lat;
       var lon = locale.lng;
-      that.lattLongs.push([latt, lon]);
       getPoints(latt, lon);
     }
   });
