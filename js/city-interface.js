@@ -3,7 +3,7 @@ var Bike = require('./../js/bike.js').bikeModule;
 var City = require('./../js/city.js').cityModule;
 
 $(document).ready(function(){
-  $("#city-search").click(function(event){
+  $("#city-search").submit(function(event){
     event.preventDefault();
     var city = $("#city").val();
     $("#city").val("");
